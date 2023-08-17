@@ -15,8 +15,8 @@ The main files are laid out in the current directory as follows. Unless specifie
     2. The intermediate calculation for solving the relations is done in the Magma file [4H-Quadratic.txt](4H-Quadratic.txt).
     3. Calculates the explicit quadratics vanishing on **4H** based on this. 
 - [5H-Torsion.nb](5H-Torsion.nb) :
-    1. Produces an embedding of the fake projective plane into **\mathbb{C}P^6** using sections of **5H + D**.
-    2. Produces a map of the fake projective plane into **\mathbb{C}P^6** using sections of **5H**. This image of the fake projective plane will turn out to be singular.
+    1. Produces an embedding of the fake projective plane into **\mathbb{C}P^5** using sections of **5H + D**.
+    2. Produces a map of the fake projective plane into **\mathbb{C}P^5** using sections of **5H**. This image of the fake projective plane will turn out to be singular.
     3. Computes explicit quadratics vanishing on the basis of **6** global sections of **5H**.
 - [4H-Torsion.nb](4H-Torsion.nb) : Computes explicit quadratics vanishing on the sections **4H + D**, **4H + D_1**, and **4H + D + D_1** and checks that **2H + D_1** and **2H + D + D_1** has no non-trivial sections.
 
@@ -57,8 +57,8 @@ The folders for this repository are as follows:
     - **4HD1.txt** contains the 3 equations for the 3 sections of **4H + D_1**
     - **4HDD1_one_section.txt** contains the 21 quadratics vanishing on one section of **4H + D + D_1**.
     - **4HDD1.txt** contains the 3 equations for the 3 sections of **4H + D + D_1**.
-    - **5H_Equations.txt** contains the equations of the map of the fake projective plane into **\mathbb{C}P^6** using sections of **5H**.
-    - **5H+D_Embedding.txt** contains the equations of the embedding of the fake projective plane into **\mathbb{C}P^6** using sections of **5H + D**.
+    - **5H_Equations.txt** contains the equations of the map of the fake projective plane into **\mathbb{C}P^5** using sections of **5H**.
+    - **5H+D_Embedding.txt** contains the equations of the embedding of the fake projective plane into **\mathbb{C}P^5** using sections of **5H + D**.
     - **5H+D_Sections.txt** contains the **6** global sections of **5H + D**.
     - **Quadratics_on_Zi.txt** contains the quadratics vanishing on each of the **6** sections of **5H**.
     - **s3_and_D.txt** contains the equations for **s_3 = r_3^3** and **d = r_3 r_5 r_6**.

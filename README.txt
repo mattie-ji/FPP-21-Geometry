@@ -1,5 +1,5 @@
 # On the Geometry of a Fake Projective Plane with 21 Automorphisms
-This repository contains supplementary code for the paper "On the Geometry of a Fake Projective Plane with $21$ Automorphisms".
+This repository contains supplementary code for the paper "On the Geometry of a Fake Projective Plane with 21 Automorphisms".
 
 ## Main Files
 
@@ -19,6 +19,8 @@ The main files are laid out in the current directory as follows. Unless specifie
     2. Produces a map of the fake projective plane into $\mathbb{C}P^6$ using sections of $5H$. This image of the fake projective plane will turn out to be singular.
     3. Computes explicit quadratics vanishing on the basis of $6$ global sections of $5H$.
 - [4H-Torsion.nb](4H-Torsion.nb) : Computes explicit quadratics vanishing on the sections $4H + D$, $4H + D_1$, and $4H + D + D_1$ and checks that $2H + D_1$ and $2H + D + D_1$ has no non-trivial sections.
+
+All Mathematica files involve some computations of finding random points on certain curves and surfaces. Please try re-running the file again if the results are inconsistent with what's in the folder [Equations](Equations). We also provide a standard set of pre-computed points in the folder [Dependency](Dependency) for consistency.
 
 ### Magma Files
 - [3H-Reduction.txt](3H-Reduction.txt) finds two finite field solutions of linear cuts representing $3H + D_1$ and $3H + D + D_1$.
@@ -42,7 +44,7 @@ This was the order of how we computed the results in this paper.
 
 ## Other Folders
 The folders for this repository are as follows:
-- [Dependency](Dependency) : Contains pre-computed points and dependencies the main Mathematica files need to run. 
+- [Dependency](Dependency) : Contains pre-computed points and other dependencies for the main Mathematica files. 
 - [Equations](Equations) : Contains data produced by the main Mathematica files.
     - **3H_D.txt** contains the 28 quadratic equations vanishing on $3H + D$.
     - **3H_D+D1.txt** contains the 28 quadratic equations vanishing on $3H + D + D_1$.
@@ -50,10 +52,12 @@ The folders for this repository are as follows:
     - **4H_Coeffs_Vanishing.txt** contains the relations on the coefficients of $s_3 = r_3^3$ and $d = r_3 r_5 r_6$ produced by [4H.nb](4H.nb).
     - **4H_one_section.txt** contains the 21 quadratics vanishing on $r_3$.
     - **4HD_one_section.txt** contains the 21 quadratics vanishing on one section of $4H + D$.
+    - **4HD.txt** contains the 3 equations for the 3 sections of $4H + D$.
     - **4HD1_one_section.txt** contains the 21 quadratics vanishing on one section of $4H + D_1$.
+    - **4HD1.txt** contains the 3 equations for the 3 sections of $4H + D_1$
     - **4HDD1_one_section.txt** contains the 21 quadratics vanishing on one section of $4H + D + D_1$.
+    - **4HDD1.txt** contains the 3 equations for the 3 sections of $4H + D + D_1$.
     - **5H_Equations.txt** contains the equations of the map of the fake projective plane into $\mathbb{C}P^6$ using sections of $5H$.
-    - **5H_Sections.txt** contains the $6$ global sections of $5H$.
     - **5H+D_Embedding.txt** contains the equations of the embedding of the fake projective plane into $\mathbb{C}P^6$ using sections of $5H + D$.
     - **5H+D_Sections.txt** contains the $6$ global sections of $5H + D$.
     - **Quadratics_on_Zi.txt** contains the quadratics vanishing on each of the $6$ sections of $5H$.
@@ -61,11 +65,11 @@ The folders for this repository are as follows:
 
 - [Verification](Verification) : Contains code verifying the results produced by the main Mathematica files.
     - The folder [5H+D](Verification/5H+D/) checks that the map produced by $5H + D$ is an embedding:
-        - **check_hilbert.txt** checks the Hilbert polynomial of the embedding.
+        - **check_Hilbert.txt** checks the Hilbert polynomial of the embedding.
         - **check_smoothness** checks that the image is smooth.
-        - **check_Macaulay2** performs other checks on the equations.
+        - **check_M2** performs other checks on the equations. This file is in Macaulay2.
     - The folder [5H](Verification/5H/):
-        - **check_hilbert.txt** shows that the Hilbert polynomial of the equations is $-3$ off from the embedding.
-        - **check_Z2.txt** checks the Hilbert polynomial of the quadratics vanishing on $Z_2$ (the main section of $5H$ we used in the paper and calculations). The file is in Macaulay2.
+        - **check_Hilbert.txt** shows that the Hilbert polynomial of the equations is $-3$ off from the embedding.
+        - **check_Z2.txt** checks the Hilbert polynomial of the quadratics vanishing on $Z_2$ (the main section of $5H$ we used in the paper and calculations).
     - The folders [3H+Torsion](Verification/3H+Torsion/) checks the Hilbert polynomial of sections produced on $3H + D, 3H + D_1,$ and $3H + D + D_1$. The files are in Macaulay2.
     - The folders [4H+Torsion](Verification/4H+Torsion/) checks the Hilbert polynomial of one section of $4H, 4H + D, 4H + D_1$, and $4H + D + D_1$ respectively. The files are in Macaulay2.

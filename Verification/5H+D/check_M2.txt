@@ -1,9 +1,7 @@
-FF<rr>:=FiniteField(1327);
-rr:=103;
-RR<Z1,Z2,Z3,Z4,Z5,Z6>:=PolynomialRing(FF,6,"grevlex");
+R=ZZ/1327[Z1,Z2,Z3,Z4,Z5,Z6];
+rr=103;
 
-Gens:=[
-(1372 + 196*rr)*Z1^5*Z2 + (-128 + 128*rr)*Z2^4*Z3^2 + 
+Rels = {(1372 + 196*rr)*Z1^5*Z2 + (-128 + 128*rr)*Z2^4*Z3^2 + 
   (-1344 + 576*rr)*Z1*Z2^2*Z3^3 + (2688 - 896*rr)*Z1^2*Z3^4 + 
   (-16 - 16*rr)*Z2^5*Z4 + (-952 - 8*rr)*Z1*Z2^3*Z3*Z4 + 
   (-2296 + 1512*rr)*Z1^2*Z2*Z3^2*Z4 + (196 + 28*rr)*Z1^2*Z2^2*Z4^2 + 
@@ -1794,45 +1792,28 @@ Gens:=[
   (-2352 + 13776*rr)*Z3^3*Z6^3 + (-1764 - 4116*rr)*Z2*Z3*Z4*Z6^3 + 
   (2793 - 1911*rr)*Z1*Z4^2*Z6^3 + (-7252 - 980*rr)*Z2^2*Z5*Z6^3 + 
   (14210 - 9898*rr)*Z1*Z3*Z5*Z6^3 - 1764*rr*Z1*Z2*Z6^4 + 
-  (-6370 - 1862*rr)*Z5^2*Z6^4 + (686 - 1274*rr)*Z4*Z6^5
+  (-6370 - 1862*rr)*Z5^2*Z6^4 + (686 - 1274*rr)*Z4*Z6^5};
 
-];
+I=ideal Rels;
+hilbertPolynomial I
+ResI = resolution I;
+betti ResI
 
-I:=Ideal(Gens);
-HilbertPolynomial(I);
+RI=R/I;
+X=Proj RI;
 
-R:=JacobianMatrix(Gens);
+HH^1(OO_X)
+HH^2(OO_X)
 
-GRR6:=GeneralLinearGroup(6,RR);
-GRR56:=GeneralLinearGroup(56,RR);
-G6:=GeneralLinearGroup(6,FF);
-G56:=GeneralLinearGroup(56,FF);
-g1:=Random(G6);
-g1RR:=GRR6 ! g1;
-h1:=Random(G56);
-h1RR:=GRR56 ! h1;
-LinComb:=h1RR*(R*g1RR);
+KtwistRes=dual ResI;
+CanModD=HH^3(dual ResI);
+OKpD=sheaf CanModD;
+OK = OKpD(-6);
+O2K=tensor(OK,OK);
 
-I1:=Ideal(Minor(LinComb,[1,2,3],[1,2,3]));
+mOK=module OK;
+mO2K= module O2K;
+hilbertPolynomial(mO2K)
+euler(mO2K)
 
-g1:=Random(G6);
-g1RR:=GRR6 ! g1;
-h1:=Random(G56);
-h1RR:=GRR56 ! h1;
-LinComb:=h1RR*(R*g1RR);
 
-I2:=Ideal(Minor(LinComb,[1,2,3],[1,2,3]));
-
-g1:=Random(G6);
-g1RR:=GRR6 ! g1;
-h1:=Random(G56);
-h1RR:=GRR56 ! h1;
-LinComb:=h1RR*(R*g1RR);
-
-I3:=Ideal(Minor(LinComb,[1,2,3],[1,2,3]));
-
-//print "Ideal 1: ", I1;
-//print "Ideal 2: ", I1;
-//print "Ideal 3: ", I1;
-
-HilbertPolynomial(I+I1+I2+I3);

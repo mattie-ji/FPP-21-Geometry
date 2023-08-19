@@ -20,7 +20,7 @@ The main files are laid out in the current directory as follows. Unless specifie
     3. Computes explicit quadratics vanishing on the basis of $6$ global sections of $5H$.
 - [4H-Torsion.nb](4H-Torsion.nb) : Computes explicit quadratics vanishing on the sections $4H + D$, $4H + D_1$, and $4H + D + D_1$ and checks that $2H + D_1$ and $2H + D + D_1$ has no non-trivial sections.
 
-All Mathematica files involve some computations of finding random points on certain curves and surfaces. Please try re-running the file again if the results are inconsistent with what's in the folder [Equations](Equations). We also provide a standard set of pre-computed points in the folder [Dependency](Dependency) for consistency.
+THe Mathematica files are written in Mathematica 12.0, but they should be compatible with Mathematica 13.0. All Mathematica files involve some computations of finding random points on certain curves and surfaces. Please try re-running the file again if the results are inconsistent with what's in the folder [Equations](Equations). We also provide a standard set of pre-computed points in the folder [Dependency](Dependency) for consistency.
 
 ### Magma Files
 - [3H-Reduction.txt](3H-Reduction.txt) finds two finite field solutions of linear cuts representing $3H + D_1$ and $3H + D + D_1$.

@@ -44,8 +44,11 @@ This was the order of how we computed the results in this paper.
 
 ## Other Folders
 The folders for this repository are as follows:
-- [Dependency](Dependency) : Contains pre-computed points and other dependencies for the main Mathematica files. 
-- [Equations](Equations) : Contains data produced by the main Mathematica files.
+1. [Dependency](Dependency) : Contains pre-computed points and other dependencies for the main Mathematica files. 
+    - The file **EqsFPP.txt** contains equations of the fake projective plane **(a = 7, p = 2, \emptyset, D_3 2_7)** produced in the paper *Explicit equations of a fake projective plane* by Borisov and Keum.
+    - The other files are all computed as part of this project.
+
+2. [Equations](Equations) : Contains data produced by the main Mathematica files.
     - **3H_D.txt** contains the 28 quadratic equations vanishing on $3H + D$.
     - **3H_D+D1.txt** contains the 28 quadratic equations vanishing on $3H + D + D_1$.
     - **3H_D1.txt** contains the 28 quadratic equations vanishing on $3H + D_1$.
@@ -63,7 +66,7 @@ The folders for this repository are as follows:
     - **Quadratics_on_Zi.txt** contains the quadratics vanishing on each of the $6$ sections of $5H$.
     - **s3_and_D.txt** contains the equations for $s_3 = r_3^3$ and $d = r_3 r_5 r_6$.
 
-- [Verification](Verification) : Contains code verifying the results produced by the main Mathematica files.
+3. [Verification](Verification) : Contains code verifying the results produced by the main Mathematica files.
     - The folder [5H+D](Verification/5H+D/) checks that the map produced by $5H + D$ is an embedding:
         - **check_Hilbert.txt** checks the Hilbert polynomial of the embedding.
         - **check_smoothness** checks that the image is smooth.

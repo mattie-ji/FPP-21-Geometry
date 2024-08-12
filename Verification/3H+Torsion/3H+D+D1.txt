@@ -1,7 +1,8 @@
+F:=QuadraticField(-7);
+rr:=F.1;
+R<U0,U1,U2,U3,U4,U5,U6,U7,U8,U9>:=PolynomialRing(F,10);
 
-R=ZZ/1327[U0,U1,U2,U3,U4,U5,U6,U7,U8,U9]; 
-rr=103;
-Rels={(-(1029743/1085408) - (1911163*rr)/7597856)*
+Rels1:={(-(1029743/1085408) - (1911163*rr)/7597856)*
     U0^2 + (52135/10144 - (140291*rr)/71008)*U0*
     U1 + (-(730865/271352) + (2377555*rr)/1899464)*
     U1^2 + (398375/135676 + (91131*rr)/949732)*U0*
@@ -684,11 +685,11 @@ Rels={(-(1029743/1085408) - (1911163*rr)/7597856)*
     U9 + (-1 + rr)*U6*U9 + U7*U9 + U8*U9 + 
    U9^2, -(U0^2/4) + (5/4 - rr/4)*U0*U1 + (5/4 - rr/4)*U0*
     U2 + (5/4 - rr/4)*U0*U3 + (-1 + rr)*U0*U4 + (-1 + rr)*U0*
-    U5 + (-1 + rr)*U0*U6 + U0*U7 + U0*U8 + U0*U9,
+    U5 + (-1 + rr)*U0*U6 + U0*U7 + U0*U8 + U0*U9};
 
 
-
-U1*U2*U3 + (1 - rr)*U3^2*U4 + (1 - rr)*U1^2*U5 + 
+Rels:=
+{U1*U2*U3 + (1 - rr)*U3^2*U4 + (1 - rr)*U1^2*U5 + 
   (1 - rr)*U2^2*U6 + (10 - (2*rr))*U4*U5*U6, 
  (-3 + rr)*U0^3 + (-14 - (2*rr))*U1*U2*U3 + 8*U0*U1*U4 + 
   8*U0*U2*U5 + 8*U0*U3*U6 + (-56 - (8*rr))*U4*U5*U6 + 
@@ -1034,5 +1035,10 @@ U1*U2*U3 + (1 - rr)*U3^2*U4 + (1 - rr)*U1^2*U5 +
   rr*U1*U3*U7 - 8*U4^2*U7 + 4*U2*U3*U8 + 4*U0*U4*U8 - 
   (4*rr)*U0*U4*U8 - (2*rr)*U0*U7*U8 + 2*U0*U1*U9 + 
   16*U5*U6*U9 + 4*U6*U8*U9};
-I=ideal Rels;
-hilbertPolynomial I
+ 
+HilbertPolynomial(Ideal(Rels));
+HilbertPolynomial(Ideal(Rels)+Ideal(Rels1));
+HilbertPolynomial(Ideal(Rels)+Ideal(Rels1)^2);
+cut:=Ideal({U0+(-5+rr)*(U1+U2+U3)+(4-4*rr)*(U4+U5+U6)+(-4)*(U7+U8+U9)});
+HilbertPolynomial(Ideal(Rels)+Ideal(Rels1)^2+cut);
+
